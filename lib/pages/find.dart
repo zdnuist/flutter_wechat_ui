@@ -13,8 +13,10 @@ class FindPageState extends State<FindPage> {
   @override
     Widget build(BuildContext context) {
       // TODO: implement build
-      return  new Text("find");;
+      return  new Text("find");
     }
+
+    
 
 
 }

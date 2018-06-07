@@ -1,0 +1,8 @@
+*.iml
+*.class
+.gradle
+/build
+/captures
+.project
+/.settings
+.classpath

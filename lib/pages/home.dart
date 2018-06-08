@@ -115,7 +115,7 @@ class HomePageState extends State<HomePage> {
 
       DateTime time = new DateTime.fromMillisecondsSinceEpoch(message.time);
 
-      String showTime = "${time.month}-${time.day} ${time.hour}:${time.minute}";
+      String showTime = "${time.month}/${time.day} ${time.hour}:${time.minute}";
 
       return new Container(
         padding: const EdgeInsets.all(10.0),

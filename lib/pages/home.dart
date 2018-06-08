@@ -60,13 +60,58 @@ class HomePageState extends State<HomePage> {
             return null;
           }
 
-          return _buildRow(_messages[index]);
+          return _buildRow(index,_messages[index]);
 
         },
       );
     }
 
-    Widget _buildRow(Message message) {
+    Widget _buildHeader() {
+      return new Container(
+        margin: const EdgeInsets.only(top:10.0 , left: 10.0,right: 10.0),
+        height: 35.0,
+        
+        decoration: new BoxDecoration(
+          borderRadius: const BorderRadius.all(const Radius.circular(4.0)),
+          color: Colors.white,
+        ),
+        child: new Row(
+          children: <Widget>[
+            new Expanded(
+              child: new FlatButton.icon(
+                onPressed: (){
+                  
+                },
+                icon: new Icon(
+                  Icons.search,
+                ),
+                label: new Text(
+                  "搜索",
+                ),
+              ),
+            ),
+
+            new Container(
+              child: new IconButton(
+                padding: const EdgeInsets.all(0.0),
+                onPressed: (){
+
+                },
+                icon: new Icon(Icons.surround_sound),
+              )
+            )
+            
+
+          ],
+        ),
+      );
+    }
+
+    Widget _buildRow(int index ,Message message) {
+
+      if(index == 0){
+        return _buildHeader();
+      }
 
       DateTime time = new DateTime.fromMillisecondsSinceEpoch(message.time);
 

@@ -90,10 +90,51 @@ class IndexPageState extends State<IndexPage> {
           title: bottomItems[_currentIndex].title,
           centerTitle: true,
           actions: <Widget>[
-            new IconButton(
-              icon: new Icon(Icons.add),
-              onPressed: showActions,
-            )
+            // new IconButton(
+            //   icon: new Icon(Icons.add),
+            //   onPressed: showActions,
+            // )
+
+             new PopupMenuButton<HomeFunctions>(
+               icon: new Icon(Icons.add),
+               onSelected: (HomeFunctions result) { setState(() {  }); },
+               
+               itemBuilder: (BuildContext context) => <PopupMenuEntry<HomeFunctions>>[
+                 const PopupMenuItem<HomeFunctions>(
+                   
+                   value: HomeFunctions.create_group_chat,
+                   child: const ListTile(
+                     leading: const Icon(Icons.message),
+                      title: const Text("发起群聊"),
+                     
+                   ),
+                 ),
+                 const PopupMenuItem<HomeFunctions>(
+                   value: HomeFunctions.add_friend,
+                   child: const ListTile(
+                     leading: const Icon(Icons.person_add),
+                      title: const Text("添加朋友"),
+                     
+                   ),
+                 ),
+                 const PopupMenuItem<HomeFunctions>(
+                   value: HomeFunctions.scan,
+                   child: const ListTile(
+                     leading: const Icon(Icons.scanner),
+                      title: const Text("扫一扫"),
+                     
+                   ),
+                 ),
+                 const PopupMenuItem<HomeFunctions>(
+                   value: HomeFunctions.pay,
+                   child: const ListTile(
+                     leading: const Icon(Icons.payment),
+                      title: const Text("收付款"),
+                     
+                   ),
+                 ),
+               ],
+             )
           ],
         ),
         body:  new Center(
@@ -103,7 +144,16 @@ class IndexPageState extends State<IndexPage> {
       );
     }
 
+
+
     void showActions() {
       print("show actions");
+
+      // This menu button widget updates a _selection field (of type WhyFarther,
+      // not shown here).
+     
     }
 }
+
+
+ enum HomeFunctions { create_group_chat, add_friend, scan, pay }

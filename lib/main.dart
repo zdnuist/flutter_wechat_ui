@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
-        primaryColor: Colors.black
+        primaryColor: const Color(0xFF36353a),
+        
       ),
       home: new IndexPage(),
     );

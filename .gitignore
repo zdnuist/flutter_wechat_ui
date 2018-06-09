@@ -9,3 +9,9 @@ build/
 .flutter-plugins
 
 /.vscode
+
+*.iml
+
+/.idea
+
+*.lock

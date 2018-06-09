@@ -1,8 +1,4 @@
 # flutter_wechat_ui
 
-A new Flutter project.
+使用Flutter实现微信的部分界面（与实际效果有偏差，主要是为了熟悉控件的使用，以及事件绑定等）
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).

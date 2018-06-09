@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'search.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -80,6 +81,13 @@ class HomePageState extends State<HomePage> {
             new Expanded(
               child: new FlatButton.icon(
                 onPressed: (){
+
+                  Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) {
+                      return new SearchPage();
+
+                    }
+                  ));
                   
                 },
                 icon: new Icon(

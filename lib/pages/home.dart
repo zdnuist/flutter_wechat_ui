@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'search.dart';
+import 'chat.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -64,6 +65,7 @@ class HomePageState extends State<HomePage> {
           return _buildRow(index,_messages[index]);
 
         },
+        
       );
     }
 
@@ -125,7 +127,7 @@ class HomePageState extends State<HomePage> {
 
       String showTime = "${time.month}/${time.day} ${time.hour}:${time.minute}";
 
-      return new Container(
+      var container =  new Container(
         padding: const EdgeInsets.all(10.0),
         child: new Row(
           children: <Widget>[
@@ -158,6 +160,19 @@ class HomePageState extends State<HomePage> {
           ],
 
         ),
+      );
+
+      return new InkWell(
+        child: container,
+        onTap: (){
+         Navigator.of(context).push(
+          new MaterialPageRoute(
+           builder: (context) {
+                return new ChatPage(message.name);
+                }
+        ));
+        }
+
       );
     }
 

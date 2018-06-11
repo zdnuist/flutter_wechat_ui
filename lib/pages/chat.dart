@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../test/demo1.dart';
 
 class ChatPage extends StatefulWidget {
 
@@ -42,6 +43,7 @@ class ChatePageState extends State<ChatPage>{
   @override
     Widget build(BuildContext context) {
       // TODO: implement build
+     
       return new Scaffold(
         appBar: new AppBar(
           title: new Text(name),
@@ -57,16 +59,28 @@ class ChatePageState extends State<ChatPage>{
         ),
 
         body: _buildListView(),
+        // bottomNavigationBar: new BottomAppBar(
+        //    color: Colors.white,
+        //    child: _buidBottomView(),
+        //  ) ,
       );
     }
 
     Widget _buildListView() {
-      return new ListView.builder(
-        itemCount: messages.length,
-        itemBuilder: (context , i){
-          return _buildRow(i);
-        },
+      return new Column(
+        children: <Widget>[
+          new Expanded(
+            
+            child:  new ListView.builder(
+            itemCount: messages.length,
+            itemBuilder: (context , i){
+              return _buildRow(i);
+            },
 
+           ),
+          ),
+          _buidBottomView()
+        ],
       );
     }
 
@@ -143,5 +157,67 @@ class ChatePageState extends State<ChatPage>{
           ),
         );
 
+    }
+
+    Widget _buidBottomView() {
+      return new Container(
+        padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+        color: Colors.black12,
+        height: 60.0,
+        child: new Row(
+          children: <Widget>[
+            new IconButton(
+              icon: new Icon(Icons.speaker),
+              onPressed: (){
+
+              },
+            ),
+
+            new Expanded(
+              
+              child: 
+              new Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.only(left:2.0 ,top: 2.0),
+                height: 40.0,
+                child:
+                 new TextField(
+                   keyboardType: TextInputType.text,
+                   autofocus: false,
+                   style: new TextStyle(
+                     fontSize: 20.0,
+                     color: Colors.black,
+                   ),
+                   decoration: new InputDecoration.collapsed(
+                     hintText: "",
+                   
+                ),
+              )
+              ,
+                 decoration: new BoxDecoration(
+                 borderRadius: const BorderRadius.all(const Radius.circular(4.0)),
+                 color: Colors.white,
+              ),
+              ),
+
+            ),
+
+            new IconButton(
+              icon: new Icon(Icons.insert_emoticon),
+              onPressed: (){
+
+              },
+            ),
+
+            new IconButton(
+              icon: new Icon(Icons.add_box),
+              onPressed: (){
+
+              },
+            ),
+
+          ],
+        ),
+      );
     }
 }

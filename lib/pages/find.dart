@@ -93,7 +93,7 @@ class FindPageState extends State<FindPage> {
                   padding: const EdgeInsets.only(left: 15.0),
                 ) ,
               ),
-              new Icon(Icons.arrow_right)
+              new Icon(Icons.arrow_forward_ios)
             ],
           ),
         );

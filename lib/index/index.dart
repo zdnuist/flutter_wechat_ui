@@ -89,7 +89,19 @@ class IndexPageState extends State<IndexPage> {
         appBar: new AppBar(
           title: bottomItems[_currentIndex].title,
           centerTitle: true,
-          actions: <Widget>[
+          actions: _buildActions(),
+        ),
+        body:  new Center(
+            child: _currentPage
+        ),
+        bottomNavigationBar: bottomNavigationBar,
+      );
+    }
+
+
+    List<Widget> _buildActions() {
+      if(_currentIndex == 0){
+        return <Widget>[
             // new IconButton(
             //   icon: new Icon(Icons.add),
             //   onPressed: showActions,
@@ -135,16 +147,10 @@ class IndexPageState extends State<IndexPage> {
                  ),
                ],
              )
-          ],
-        ),
-        body:  new Center(
-            child: _currentPage
-        ),
-        bottomNavigationBar: bottomNavigationBar,
-      );
+          ];
+      }
+      return null;
     }
-
-
 
     void showActions() {
       print("show actions");

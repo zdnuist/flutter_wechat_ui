@@ -9,7 +9,8 @@
 
 ++
 
-<img src="./screencap/chat.png" alt="drawing" width="150px"/>  
+<img src="./screencap/chat.png" alt="drawing" width="150px"/>   
+<img src="./screencap/find.png" alt="drawing" width="150px"/>  
 
 <!-- ![main-page](./screencap/mian.png)
 ![main-page](./screencap/mian_menu.png)

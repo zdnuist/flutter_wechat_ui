@@ -85,7 +85,7 @@ class MinePageState extends State<MinePage> {
                   padding: const EdgeInsets.only(left: 15.0),
                 ) ,
               ),
-              new Icon(Icons.arrow_forward_ios)
+              new Icon(Icons.arrow_forward_ios,size: 16.0,)
             ],
           ),
         );
@@ -137,7 +137,7 @@ class MinePageState extends State<MinePage> {
 
             new Icon(Icons.code),
 
-            new Icon(Icons.arrow_forward_ios)
+            new Icon(Icons.arrow_forward_ios,size: 16.0)
 
             ],
           ),

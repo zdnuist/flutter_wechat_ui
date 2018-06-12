@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'search.dart';
 import 'chat.dart';
 
+import '../test/demo_main.dart';
+
 class HomePage extends StatefulWidget {
   @override
     State<StatefulWidget> createState() {
@@ -168,7 +170,11 @@ class HomePageState extends State<HomePage> {
          Navigator.of(context).push(
           new MaterialPageRoute(
            builder: (context) {
-                return new ChatPage(message.name);
+                 if(index == 3){
+                    return new DemoMainPage();
+                 }
+                 return new ChatPage(message.name);
+                  
                 }
         ));
         }

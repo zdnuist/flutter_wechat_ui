@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'circle.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -72,7 +73,8 @@ class MinePageState extends State<MinePage> {
       print(item.title);
 
       if(item.type == 0){
-        return new Container(
+        return new InkWell(
+          child: new Container(
           color: Colors.white,
           height: 44.0,
           padding: const EdgeInsets.only(left: 10.0,right: 10.0),
@@ -88,9 +90,14 @@ class MinePageState extends State<MinePage> {
               new Icon(Icons.arrow_forward_ios,size: 16.0,)
             ],
           ),
-        );
+        ),
+        onTap: (){
+          
+        },
+        ) ;
       }else if(item.type == 2) {
-        return new Container(
+        return new InkWell(
+          child: new Container(
           color: Colors.white,
           height: 88.0,
           padding: const EdgeInsets.all(10.0),
@@ -141,7 +148,16 @@ class MinePageState extends State<MinePage> {
 
             ],
           ),
-        );
+        ),
+        onTap: (){
+          Navigator.of(context).push(new MaterialPageRoute(
+            builder: (context){
+                return new CirclePage();
+            }
+
+          ));
+        },
+        ) ;
       }
 
       return new Container(
